@@ -25,7 +25,7 @@ print('123')
 print(1.23)
 ```
 ### Результат.
-![1]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/1.jpg
+![1](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/1.jpg)
 
 ## Выводы
 
@@ -47,7 +47,7 @@ print(5.1 + 8.27)
 print(3 + 7.04 + 1 + 2.33)
 ```
 ### Результат.
-![2]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/2.jpg
+![2](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/2.jpg)
 
 ## Выводы
 В данном коде совершаются простые математические действия с разными типами переменных
@@ -71,7 +71,7 @@ two = 'Мир!'
 print (one + two)
 ```
 ### Результат.
-![3]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/3.jpg
+![3](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/3.jpg)
 
 ## Выводы
 В данном коде совершаются различные действия со строками
@@ -95,7 +95,7 @@ three = None
 print(str(three))
 ```
 ### Результат.
-![4]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/4.jpg
+![4](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/4.jpg)
 
 ## Выводы
 В данном коде совершаются преобразование переменных в другой тип отличный от них
@@ -118,7 +118,7 @@ three = input('three:')
 print(one, two, three)
 ```
 ### Результат.
-![5]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/5.jpg
+![5](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/5.jpg)
 
 ## Выводы
 В данном коде с помощью функции input присваиваются значения трём переменным, далее эти переменные, получив значения, выводятся в консоль.
@@ -137,7 +137,7 @@ print('Целочисленное деление', a // b)
 print('Нахождение остатка от деление', a % b)
 ```
 ### Результат.
-![6]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/6.jpg
+![6](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/6.jpg)
 
 ## Выводы
 В данном коде над двумя переменными совершаются математические операции
@@ -160,7 +160,7 @@ line = 'Hello'
 print(line * 6)
 ```
 ### Результат.
-![7]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/7.jpg
+![7](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/7.jpg)
 
 ## Выводы
 В данном коде показано, как строковую переменную можно умножить на какое-либо число, что в итоге выдаст повторение значения стоковой переменной
@@ -175,7 +175,7 @@ sentence = 'Hello World'
 print(sentence.count('o'))
 ```
 ### Результат.
-![8]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/8.jpg
+![8](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/8.jpg)
 
 ## Выводы
 В данном коде показано, что с помощью метода .count можно найти количество чего-либо в переменной, например количество букв в строковой переменной, заключил нужный элемент в скобки и одинарные кавычки( (переменная.count('что мы ищем')) ) или в числовой переменной, просто заключив элемент в скобки( (переменная.count(4)) ).
@@ -189,7 +189,7 @@ print(sentence.count('o'))
 print('Hello\nWorld')
 ```
 ### Результат.
-![9]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/9.jpg
+![9](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/9.jpg)
 
 ## Выводы
 В данном коде показано, что с помощью специального управляющего символа(\n) можно перенести значение строковой переменной в следующую строку.
@@ -205,7 +205,7 @@ print(sentence[1])
 print(sentence[:5])
 ```
 ### Результат.
-![10]https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/10.jpg
+![10](https://github.com/TeaK1ng/SoftEng/blob/Tema_2/lab_2/10.jpg)
 
 ## Выводы
 В данном коде показаны действия связаные с порядком сивловом в переменной
