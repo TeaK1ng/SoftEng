@@ -20,15 +20,13 @@
 ### Напишите функцию, которая выполняет любые арифметические действия и выводит результат в консоль. Вызовите функцию используя “точку входа”.
 
 ```python
-def summ(a, b):
-    print(a + b)
+set_1 = {'White', 'Black', 'Red', 'Pink'}
+set_2 = {'Red', 'Green', 'Blue', 'Red'}
 
-
-if __name__ == '__main__':
-    summ(5, 6)
+print(set_1 - set_2)
 ```
 ### Результат.
-![1](https://github.com/TeaK1ng/SoftEng/blob/Tema_4/1.jpg)
+![1](https://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/1.jpg)
 
 ## Выводы
 
@@ -38,15 +36,14 @@ if __name__ == '__main__':
 ### Напишите функцию, которая выполняет любые арифметические действия, возвращает при помощи return значение в место, откуда вызывали функцию. Выведите результат в консоль. Вызовите функцию используя “точку входа”.
 
 ```python
-def summ():
-    return 2 + 6
-
-
-if __name__ == '__main__':
-    print(summ())
+a = set('abcdefg')
+print(a)
+for i in range(1, 5):
+    a.add(i)
+print(a)
 ```
 ### Результат.
-![2](hhttps://github.com/TeaK1ng/SoftEng/blob/Tema_4/2.jpg)
+![2](hhttps://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/2.jpg)
 
 ## Выводы
 В данном коде создаётся функция summ, которая возвращает сумму 2 и 6. Далее при помощи точки выхода вызываем функцией print функцию summ.
@@ -56,16 +53,17 @@ if __name__ == '__main__':
 ### Напишите функцию, в которую передаются два аргумента, над ними производится арифметическое действие, результат возвращается туда, откуда эту функцию вызывали. Выведите результат в консоль. Вызовите функцию в любом небольшом цикле.
 
 ```python
-def summ(a, b):
-    return a + b
+def replace(input_list):
+    memory = input_list[0]
+    input_list[0] = input_list[-1]
+    input_list[-1] = memory
 
-for i in range(5):
-    x = 3
-    y = 4
-    print(summ(x, y))
+    return input_list
+
+print(replace([1, 2, 3, 4, 5]))
 ```
 ### Результат.
-![3](https://github.com/TeaK1ng/SoftEng/blob/Tema_4/3.jpg)
+![3](https://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/3.jpg)
 
 ## Выводы
 В данном коде создаётся функция summ, а далее с помощью цикла 5 раз выводится сумма переменных x и y.
@@ -75,21 +73,11 @@ for i in range(5):
 ### Напишите функцию, на вход которой подается какое-то изначальное неизвестное количество аргументов, над которыми будет производится арифметические действия. Для выполнения задания необходимо использовать кортеж “*args”. На скриншоте ниже приведен пример такой программы с комментариями.
 
 ```python
-def main(x, *args):
-    one = x
-    two = sum(args)
-    three = float(len(args))
-    print(f'one = {one}, two = {two}, three = {three}')
-
-    return x + two / three
-
-
-if __name__ == "__main__":
-    res = main(10, 0, 1, 2, -1, 0, -1, 1, 2)
-    print(f"result = {res}")
+a = [12, 54, 32, 57, 843, 2346, 765, 75, 25, 234, 756, 23]
+print (a[2:6])
 ```
 ### Результат.
-![4](https://github.com/TeaK1ng/SoftEng/blob/Tema_4/4.jpg)
+![4](https://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/4.jpg)
 
 ## Выводы
 В данном коде создаётся функция main, которая принимает число и дополнительные аргументы. Функция считает и выводит сумму, количество и сами значения.
@@ -100,23 +88,15 @@ if __name__ == "__main__":
 ### Напишите функцию, которая на вход получает кортеж “** kwargs” и при помощи цикла выводит значения, поступившие в функцию. На скриншоте ниже указаны два варианта вызова функции с “** kwargs” и два варианта работы с данными, поступившими в эту функцию. Комментарии в коде и теоретическая часть помогут вам разобраться в этом нелегком аспекте. Вызовите функцию используя “точку входа”.
 
 ```python
-def main(**kwargs):
-    for i in kwargs.items():
-        print(i[0], i[1])
+def useless(lst):
+    return max(lst) / len(lst)
 
-    for key in kwargs:
-        print(f'{key} = {kwargs[key]}')
-
-
-if __name__ == "__main__":
-    main(x=[1, 2, 3], y=[4, 5, 6], z=[7, 8, 9])
-
-    print()
-
-    main(**{'x': [1, 2, 3], 'y': [4, 5, 6]})
+print(useless([3, 5, 7, 3, 33]))
+print(useless([-12.5, 54, 77.3, 0, -36, 98.2, 63, 21.7, 47, -89.6]))
+print(useless([-25.8, 86, 12.5, -56, 73.2, 0, 43, -91.5, 65.9, -7]))
 ```
 ### Результат.
-![5](hhttps://github.com/TeaK1ng/SoftEng/blob/Tema_4/5.jpg)
+![5](hhttps://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/5.jpg)
 
 ## Выводы
 В данном коде создаётся функция main, принимающая именованные аргументы kwargs, она выводит пары ключ-значение двумя способами: через метод .items() и проходом по ключам. Далее функция вызывается с разными наборами данных.
@@ -127,20 +107,16 @@ if __name__ == "__main__":
 ### Напишите две функции. Первая – получает в виде параметра “**kwargs”. Вторая считает среднее арифметическое из значений первой функции. Вызовите первую функцию используя “точку входа” и минимум 4 аргумента.
 
 ```python
-def main(**kwargs):
-    for i, j in kwargs.items():
-        print(f'{i}. Mean = {mean(j)}')
+superheroes = ['superman', 'spiderman', 'batman']
 
+nikolay, vasiliy, ivan = superheroes
 
-def mean(data):
-    return sum(data) / float(len(data))
-
-
-if __name__ == '__main__':
-    main(x=[1, 2, 3], y=[4, 5, 6])
+print('Николай - ', nikolay)
+print('Василий - ', vasiliy)
+print('Иван - ', ivan)
 ```
 ### Результат.
-![6](https://github.com/TeaK1ng/SoftEng/blob/Tema_4/6.jpg)
+![6](https://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/6.jpg)
 
 ## Выводы
 В данном коде создаётся функция main принимающая именованные аргументы **kwargs. Она вычисляет среднее значение списка с помощью функции mean.
@@ -150,19 +126,14 @@ if __name__ == '__main__':
 ### оздайте дополнительный файл .py. Напишите в нем любую функцию, которая будет что угодно выводить в консоль, но не вызывайте ее в нем. Откройте файл main.py, импортируйте в него функцию из нового файла и при помощи “точки входа” вызовите эту функцию.
 
 ```python
-from hello import hello_st
-
-if __name__ == '__main__':
-    hello_st()
-```
-
-доп. файл
-```python
-def hello_st():
-    print('Привет студенты')
+a = [-25.8, 86, 12.5, -56, 73.2, 0, 43, -91.5, 65.9, -7]
+a.sort()
+print('Отсортированный список: \n', a)
+a.pop(0)
+print('Отсортированный список без наименьшего элемента: \n', a)
 ```
 ### Результат.
-![7](https://github.com/TeaK1ng/SoftEng/blob/Tema_4/7.jpg)
+![7](https://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/7.jpg)
 
 ## Выводы
 В данном коде импортируется функция hello_st из модуля hello, после чего при запуске скрипта напрямую __name__ == '__main__' вызывается импортируемая функция
@@ -173,19 +144,20 @@ def hello_st():
 ### Напишите программу, которая будет выводить корень, синус, косинус полученного от пользователя числа.
 
 ```python
-import math
+from random import randint
 
-def main():
-    value = int(input('Ввод: '))
-    print(math.sqrt(value))
-    print(math.sin(value))
-    print(math.cos(value))
+def list_maker():
+    a = [randint(1, 100)] * randint(3, 10)
+    return a
 
 if __name__ == '__main__':
-    main()
+    result = []
+    for i in range(randint(1, 5)):
+        result.append(list_maker())
+    print(result)
 ```
 ### Результат.
-![8](https://github.com/TeaK1ng/SoftEng/blob/Tema_4/8.jpg)
+![8](https://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/8.jpg)
 
 ## Выводы
 В данном коде создаётся функция main, которая считывает числа с консоли и вычисляет корень, синус и косинус.
@@ -196,29 +168,24 @@ if __name__ == '__main__':
 ### Напишите программу, которая будет рассчитывать какой день недели будет через n-нное количество дней, которые укажет пользователь.
 
 ```python
-from datetime import datetime as dt
-from datetime import timedelta as td
-
-def main():
-    print(
-        f'сегодня {dt.today().date()}'
-        f'день недели {dt.today().isoweekday()}'
-    )
-
-    n = int(input("Введите число:"))
-    today = dt.today()
-    res = today + td(days=n)
-
-    print(
-        f'через {n} дней будет {res.date()} '
-        f'день недели - {res.isoweekday()}'
-    )
+def superset (set_1, set_2):
+    if set_1 > set_2:
+        print(f'0бъект {set_1} является чистым супермножеством')
+    elif set_1 == set_2:
+        print(f'Множества равны')
+    elif set_1 < set_2:
+        print(f'0бъект {set_2} является чистым супермножеством')
+    else:
+        print('Супермножество не обнаружено')
 
 if __name__ == '__main__':
-    main()
+    superset ({1, 8, 3, 5}, {3, 5})
+    superset ({1, 8, 3, 5}, {5, 3, 8, 1})
+    superset ({3, 5}, {5, 3, 8, 1})
+    superset ({90, 100}, {3, 5})
 ```
 ### Результат.
-![9](hhttps://github.com/TeaK1ng/SoftEng/blob/Tema_4/9.jpg)
+![9](hhttps://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/9.jpg)
 
 ## Выводы
 В данном коде функция main выводит текущую дату и день недели, после чего запрашивается число для переменной n, и далее выводится дата и день недели через n дней.
@@ -229,30 +196,11 @@ if __name__ == '__main__':
 ### Напишите программу с использованием глобальных переменных, которая будет считать площадь треугольника или прямоугольника в зависимости от того, что выберет пользователь. Получение всей необходимой информации реализовать через input(), а подсчет площадей выполнить при помощи функций. Результатом программы будет число, равное площади, необходимой фигуры.
 
 ```python
-global res
-def rectangle():
-    a = float(input("Ширина: "))
-    b = float(input("Высота: "))
-    global res
-    res = a * b
-
-def triangle():
-    a = float(input("Основание: "))
-    h = float(input("Высота: "))
-    global res
-    res = 0.5 * a * h
-
-figure = input("1-прямоугольник, 2-треугольник: ")
-
-if figure == "1":
-    rectangle()
-elif figure == "2":
-    triangle()
-
-print(f"Площадь: {res}")
+my_list = [2, 5, 8, 3]
+print(my_list[::-1])
 ```
 ### Результат.
-![10](hhttps://github.com/TeaK1ng/SoftEng/blob/Tema_4/10.jpg)
+![10](hhttps://github.com/TeaK1ng/SoftEng/blob/Tema_5/pic/10.jpg)
 
 ## Выводы
 В данном коде две функции для вычисления площади прямоугольника и треугольника, результат сохраняется в глобальной переменной res. Сначала пользователь выбирает фигуру, а далее вводит значения сторон фигур.
