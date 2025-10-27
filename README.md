@@ -63,7 +63,8 @@ f.close()
 ### Напишите программу, которая выведет все строки из вашего файла в массиве, при этом используйте конструкцию with open().
 
 ```python
-
+with open('input.txt') as f:
+    print(f.readlines())
 ```
 ### Результат.
 ![4](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/4.jpg)
@@ -78,7 +79,9 @@ f.close()
 ### Напишите программу, которая выведет каждую строку из вашего файла отдельно, при этом используйте конструкцию with open().
 
 ```python
-
+with open('input.txt') as f:
+    for line in f:
+        print(line)
 ```
 ### Результат.
 ![5](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/5.jpg)
@@ -93,10 +96,16 @@ f.close()
 ### Напишите программу, которая будет добавлять новую строку в ваш файл, а потом выведет полученный файл в консоль. Вывод можно осуществлять любым способом. Обязательно проверьте сам файл, чтобы изменения в нем тоже отображались.
 
 ```python
+with open('input.txt', 'a+') as f:
+    f.write('\nЯ дополнительная строка')
 
+with open('input.txt', 'r') as f:
+    result = f.readlines()
+    print(result)
 ```
 ### Результат.
-![6](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/6.jpg)
+![61](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/61.jpg)
+![62](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/62.jpg)
 
 ## Выводы
 
@@ -107,7 +116,11 @@ f.close()
 ### Напишите программу, которая перепишет всю информацию, которая была у вас в файле до этого, например напишет любые данные из произвольно вами составленного списка. Также не забудьте проверить что измененная вами информация сохранилась в файле.
 
 ```python
-
+lines = ['one', 'two', 'three']
+with open('input.txt', 'w') as f:
+    for line in lines:
+        f.write('\nCycle run ' + line)
+    print('Done!')
 ```
 ### Результат.
 ![71](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/71.jpg)
@@ -126,7 +139,17 @@ f.close()
 ### Выберите любую папку на своем компьютере, имеющую вложенные директории. Выведите на печать в терминал ее содержимое, как и всех подкаталогов при помощи функции print_docs(directory).
 
 ```python
+import os
 
+def print_docs (directory):
+    all_files = os.walk(directory)
+    for catalog in all_files:
+        print(f'Папка {catalog [0]} содержит:')
+    print (f' Директории: {", ".join([folder for folder in catalog [1]])}')
+    print (f'Файлы: {", ".join([file for file in catalog [2]])}')
+    print('-' * 40)
+
+print_docs('/Users/user/Pictures/Фоновые изображения рабочего стола')
 ```
 ### Результат.
 ![8](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/8.jpg)
@@ -152,7 +175,19 @@ f.close()
 ### Требуется реализовать функцию, которая выводит слово, имеющее максимальную длину (или список слов, если таковых несколько). Проверьте работоспособность программы на своем наборе данных
 
 ```python
+def longest_words(file):
+    with open(file, encoding='utf-8') as f:
+        words = f.read().split()
+        max_length = len(max(words, key=len))
+        for word in words:
+            if len(word) == max_length:
+                sought_words = word
+                
+        if len(sought_words) == 1:
+            return sought_words[0]
+        return sought_words
 
+print(longest_words('input.txt'))
 ```
 ### Результат.
 ![9](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/9.jpg)
@@ -165,15 +200,25 @@ f.close()
 
 ## Лабораторная работа №10
 ### Требуется создать csv-файл «rows_300.csv» со следующими столбцами:
-###   • № - номер по порядку (от 1 до 300);Михаил А. Панов
+###   • № - номер по порядку (от 1 до 300);
 ###   • Секунда – текущая секунда на вашем ПК;
 ###   • Микросекунда – текущая миллисекунда на часах.
 ### Для наглядности на каждой итерации цикла искусственно приостанавливайте скрипт на 0,01 секунды.
 
 ```python
+import csv
+import datetime
+import time
 
+with open('rows_300.csv', 'w', encoding='utf-8', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow (['№', 'Секунда', 'Микросекунда'])
+    for line in range(1, 301):
+        writer.writerow([line, datetime.datetime.now().second, datetime.datetime.now().microsecond])
+        time.sleep(0.01)
 ```
 ### Результат.
-![10](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/10.jpg)
+![101](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/101.jpg)
+![102](https://github.com/TeaK1ng/SoftEng/blob/Tema_7/pic/102.jpg)
 
 ## Выводы
